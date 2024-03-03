@@ -29,7 +29,8 @@ app.post('/submitName', async (req, res) => {
             name: name,
         });
         await new_user.save();
-        res.render('Confirmation');
+      //  res.render('Confirmation');
+        res.send("data saved successfully....."
     } catch (error) {
       
         res.status(500).send('Internal Server Error');
