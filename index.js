@@ -34,9 +34,27 @@ app.post('/submitName', async (req, res) => {
         });
 
         await new_user.save();
-
-        console.log('User saved successfully....');
         res.render('Confirmation');
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('Internal Server Error');
+    }
+});
+
+
+app.get('/register', async (req, res) => {
+    try {
+      
+        res.render('register');
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('Internal Server Error');
+    }
+});
+app.get('/login', async (req, res) => {
+    try {
+      
+        res.render('login');
     } catch (error) {
         console.error(error);
         res.status(500).send('Internal Server Error');
