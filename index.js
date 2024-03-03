@@ -17,28 +17,21 @@ app.set('view engine', 'ejs');
 
 app.get('/', async (req, res) => {
     try {
-      
         res.render('index');
     } catch (error) {
-        console.error(error);
         res.status(500).send('Internal Server Error');
     }
 });
 app.post('/submitName', async (req, res) => {
     try {
         const { name } = req.body;
-
         const new_user = new uname({
             name: name,
-          
         });
-
         await new_user.save();
-
-        console.log('User saved successfully....');
         res.render('Confirmation');
     } catch (error) {
-        console.error(error);
+      
         res.status(500).send('Internal Server Error');
     }
 });
