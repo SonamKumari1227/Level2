@@ -1,10 +1,10 @@
 const mongoose = require('mongoose');
-
-
-//const MONGODB_URI = process.env.MONGODB_URI || 'defaultFallbackValueIfEnvVarNotSet';
+const dotenv=require("dotenv")
+dotenv.config();
+const MONGODB_URI = process.env.MONGODB_URI || 'defaultFallbackValueIfEnvVarNotSet';
 // Use MONGODB_URI in your application
 
-mongoose.connect("mongodb://localhost:27017/Deployment-testing", {
+mongoose.connect(MONGODB_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });

@@ -5,6 +5,7 @@ const db=require("./conn/connection")
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const app = express();
+const dotenv=require("dotenv")
 const uname = require("./modals/user");
 // Set up environment variables for MongoDB connection
 app.use(bodyParser.urlencoded({ extended: true }));
